@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>Lista de Compras</title>
+{% endblock %}
+
+
+
+{% block body %}
+<div class="content" style="text-align: center;">
+    <h1>Lista de Compras</h1>
+
+    <form action="/" method="POST" style="margin: 1rem;">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Adicionar Item">
+    </form>
+
+    {% if items|length < 1 %}
+
+        <h4>Lista vazia</h4>
+
+    {% else %}
+        <section class="basic-grid" >
+            {% for item in items %}
+
+                <div class="card">{{ item.content }} <br> 
+                    <p style="font-size: 10px;"> {{ item.date_created.date() }} </p> 
+                    <p style="font-size: 12px;">
+                        <a href="/update/{{item.id}}" style="margin: 1rem; text-decoration:none; color: rgb(0, 252, 101)"><b>Update</b></a>
+                        <a href="/delete/{{item.id}}" style="margin: 1rem; text-decoration:none; color: rgb(255, 4, 0)"><b>Delete</b></a>
+                    </p>
+                
+                </div>
+            
+            {% endfor %}
+        </section>
+
+    {% endif %}
+</div>
+{% endblock %}

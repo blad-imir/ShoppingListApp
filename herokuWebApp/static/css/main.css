@@ -38,8 +38,9 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-@media only screen and (min-width: 768px) {
+/*
+@media only screen and (min-width: 700px) {
     .basic-grid{
         grid-template-columns: repeat(auto-fit, minmax(250px, 325px));
     }
-  }
+  }*/

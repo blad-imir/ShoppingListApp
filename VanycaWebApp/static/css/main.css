@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
+}
+
+.navbar-brand {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: #ffd700;
+}
+
+/* Alert Messages */
+.alert {
+    margin-top: 1rem;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Forms */
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    border-radius: 0.25rem;
+    box-shadow: none;
+}
+
+.btn-primary, .btn-outline-primary {
+    border-radius: 0.25rem;
+    font-weight: bold;
+}
+
+.btn-danger {
+    font-weight: bold;
+}
+
+/* Item List Table */
+.table {
+    margin-top: 2rem;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Update Item Page */
+h1.mb-4 {
+    font-size: 2rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.text-danger {
+    color: #dc3545;
+}
+
+/* Page Not Found */
+h1.text-danger {
+    font-size: 3rem;
+    margin-top: 2rem;
+}
+
+/* Custom Styling for Buttons */
+.btn-sm {
+    padding: 0.5rem 1rem;
+}
+
+.btn {
+    border-radius: 0.25rem;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}

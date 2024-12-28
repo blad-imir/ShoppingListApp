@@ -1,0 +1,52 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Item List{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Item List</h1>
+
+<form class="mb-4" method="GET" action="{{ url_for('index') }}">
+    <div class="input-group">
+        <input type="text" name="search" class="form-control" placeholder="Search items..." value="{{ search_query }}">
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+    </div>
+</form>
+
+<form class="mb-4" method="POST" action="{{ url_for('index') }}">
+    <div class="input-group">
+        <input type="text" name="content" class="form-control" placeholder="Add a new item">
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
+</form>
+
+{% if items %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Content</th>
+            <th>Date Created</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.content|sanitize }}</td>
+            <td>{{ item.date_created }}</td>
+            <td>
+                <a href="{{ url_for('update', id=item.id) }}" class="btn btn-warning btn-sm">Update</a>
+                <form method="POST" action="{{ url_for('delete', id=item.id) }}" class="d-inline">
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No items found.</p>
+{% endif %}
+{% endblock %}  

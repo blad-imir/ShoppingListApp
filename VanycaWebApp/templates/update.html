@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {% if item %}
+    Update Item
+  {% else %}
+    Page Not Found
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% if item %}
+    <!-- Update Item Form -->
+    <h1 class="mb-4">Update Item</h1>
+    <form method="POST" action="{{ url_for('update', id=item.id) }}">
+        <div class="mb-3">
+            <label for="content" class="form-label">Item Content</label>
+            <input type="text" name="content" id="content" class="form-control" value="{{ item.content }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+  {% else %}
+    <!-- 404 Page Content -->
+    <h1 class="text-danger">404 - Page Not Found</h1>
+    <p>The page you are looking for does not exist.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Return to Home</a>
+  {% endif %}
+{% endblock %}
